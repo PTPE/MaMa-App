@@ -41,6 +41,6 @@ const Buttons = styled.button<stylesProp>`
   border-radius: 10px;
   cursor: pointer;
   &:hover {
-    background: #ffc978;
+    background: #ffe9a1;
   }
 `;
