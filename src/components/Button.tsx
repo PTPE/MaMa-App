@@ -11,6 +11,8 @@ type stylesProp = {
     padding?: string;
     fontSize?: string;
     fontWeight?: string;
+    border?: string;
+    borderRadius?: string;
   };
 };
 
@@ -26,6 +28,8 @@ Button.defaultProps = {
     fontSize: "24px",
     padding: "10px 20px",
     fontWeight: "500",
+    border: "none",
+    borderRadius: "10px",
   },
 };
 
@@ -37,8 +41,8 @@ const Buttons = styled.button<stylesProp>`
   font-size: ${(props) => props.styles?.fontSize};
   padding: ${(props) => props.styles?.padding};
   font-weight: ${(props) => props.styles?.fontWeight};
-  border: none;
-  border-radius: 10px;
+  border: ${(props) => props.styles?.border};
+  border-radius: ${(props) => props.styles?.borderRadius};
   cursor: pointer;
   &:hover {
     background: #ffe9a1;
