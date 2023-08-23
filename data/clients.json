@@ -1,0 +1,56 @@
+{
+  "clients": [
+    {
+      "id": 0,
+      "name": "王小明",
+      "address": "新北市永和區福和路57巷4弄3號4樓",
+      "time": [
+        {
+          "day": "星期一",
+          "startHour": "15",
+          "endHour": "16",
+          "startMin": "00",
+          "endMin": "00"
+        },
+        {
+          "day": "星期一",
+          "startHour": "15",
+          "endHour": "16",
+          "startMin": "00",
+          "endMin": "00"
+        }
+      ],
+      "service": ["基本身體清潔", "基本身體清潔", "基本身體清潔"]
+    },
+    {
+      "id": 0,
+      "name": "王小明",
+      "address": "新北市永和區福和路57巷4弄3號4樓",
+      "time": [
+        {
+          "day": "星期一",
+          "startHour": "15",
+          "endHour": "16",
+          "startMin": "00",
+          "endMin": "00"
+        }
+      ],
+      "service": ["基本身體清潔", "基本身體清潔", "基本身體清潔"]
+    },
+    {
+      "id": 0,
+      "name": "王小明",
+      "address": "新北市永和區福和路57巷4弄3號4樓",
+      "time": [
+        {
+          "day": "星期一",
+          "startHour": "15",
+          "endHour": "16",
+          "startMin": "00",
+          "endMin": "00"
+        }
+      ],
+      "service": ["基本身體清潔", "基本身體清潔", "基本身體清潔"]
+    }
+  ]
+}
