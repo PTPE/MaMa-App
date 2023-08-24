@@ -13,6 +13,7 @@ type stylesProp = {
     fontWeight?: string;
     border?: string;
     borderRadius?: string;
+    hoverColor?: string;
   };
 };
 
@@ -30,6 +31,7 @@ Button.defaultProps = {
     fontWeight: "500",
     border: "none",
     borderRadius: "10px",
+    hoverColor: "#ffe9a1",
   },
 };
 
@@ -45,7 +47,7 @@ const Buttons = styled.button<stylesProp>`
   border-radius: ${(props) => props.styles?.borderRadius};
   cursor: pointer;
   &:hover {
-    background: #ffe9a1;
+    background: ${(props) => props.styles?.hoverColor};
   }
   display: flex;
 `;
