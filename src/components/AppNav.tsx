@@ -3,10 +3,14 @@ import { styled } from "styled-components";
 import DogIcon from "./DogIcon";
 import Button from "./Button";
 
-const navLinks = [{ 案主資料: "list" }, { 製作班表: "create" }];
+const navLinks = [{ 案主資料: "clientData" }, { 製作班表: "create" }];
 
 const navLinksComponents = navLinks.map((link, i) => (
-  <NavLink to={Object.values(link)[0]} key={i}>
+  <NavLink
+    to={Object.values(link)[0]}
+    key={i}
+    style={{ textDecoration: "none" }}
+  >
     <Button
       styles={{
         fontSize: "20px",
