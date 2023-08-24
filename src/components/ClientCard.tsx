@@ -3,11 +3,13 @@ import DeleteIcon from "./DeleteIcon";
 import OldWomanIcon from "./OldWomanIcon";
 import styled from "styled-components";
 import Button from "./Button";
+import OldManIcon from "./OldManIcon";
 
 type DataType = {
   data: {
     id: number;
     name: string;
+    gender: string;
     address: string;
     service: string[];
     time: TimeType[];
@@ -50,7 +52,8 @@ export default function ClientCard(props: DataType) {
         </Button>
       </Icons>
       <Identity>
-        <OldWomanIcon />
+        {props.data.gender === "男" ? <OldManIcon /> : <OldWomanIcon />}
+
         <h2>{props.data.name}</h2>
       </Identity>
       <Service>

@@ -3,6 +3,7 @@ import { useContext, createContext, useReducer, useCallback } from "react";
 type DataType = {
   id: number;
   name: string;
+  gender: string;
   address: string;
   time: {
     day: string;
@@ -34,6 +35,7 @@ const initialState: state = {
     {
       id: -1,
       name: "",
+      gender: "",
       address: "",
       time: [{ day: "", startHour: "", startMin: "", endHour: "", endMin: "" }],
       service: [],
