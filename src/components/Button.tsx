@@ -47,4 +47,5 @@ const Buttons = styled.button<stylesProp>`
   &:hover {
     background: #ffe9a1;
   }
+  display: flex;
 `;
