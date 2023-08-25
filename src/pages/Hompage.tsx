@@ -1,4 +1,4 @@
-import DogIcon from "../components/DogIcon";
+import DogIcon from "../components/icon/DogIcon";
 import styled from "styled-components";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";

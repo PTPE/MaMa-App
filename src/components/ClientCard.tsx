@@ -1,11 +1,11 @@
-import EditIcon from "./EditIcon";
-import TrashCanIcon from "./TrashCanIcon";
-import OldWomanIcon from "./OldWomanIcon";
+import EditIcon from "./icon/EditIcon";
+import TrashCanIcon from "./icon/TrashCanIcon";
+import OldWomanIcon from "./icon/OldWomanIcon";
 import styled from "styled-components";
 import Button from "./Button";
-import OldManIcon from "./OldManIcon";
-import ModalContainer from "./ModalContainer";
-import ModalContent from "./ModalContent";
+import OldManIcon from "./icon/OldManIcon";
+import ModalContainer from "./modal/ModalContainer";
+import ModalContent from "./modal/ModalContent";
 
 type DataType = {
   data: {
