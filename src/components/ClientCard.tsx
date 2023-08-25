@@ -1,9 +1,11 @@
 import EditIcon from "./EditIcon";
-import DeleteIcon from "./DeleteIcon";
+import TrashCanIcon from "./TrashCanIcon";
 import OldWomanIcon from "./OldWomanIcon";
 import styled from "styled-components";
 import Button from "./Button";
 import OldManIcon from "./OldManIcon";
+import ModalContainer from "./ModalContainer";
+import ModalContent from "./ModalContent";
 
 type DataType = {
   data: {
@@ -48,7 +50,7 @@ export default function ClientCard(props: DataType) {
             backgroundColor: "transparent",
           }}
         >
-          <DeleteIcon />
+          <TrashCanIcon />
         </Button>
       </Icons>
       <Identity>
@@ -76,6 +78,13 @@ export default function ClientCard(props: DataType) {
         <label>服務地址｜</label>
         <span className="item">{props.data.address}</span>
       </Address>
+      {props.data.name === "" ? (
+        ""
+      ) : (
+        <ModalContainer>
+          <ModalContent />
+        </ModalContainer>
+      )}
     </Card>
   );
 }

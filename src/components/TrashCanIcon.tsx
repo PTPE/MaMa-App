@@ -2,7 +2,7 @@ type IconType = {
   width?: string;
   height?: string;
 };
-export default function DeleteIcon({
+export default function TrashCanIcon({
   width = "20px",
   height = "20px",
 }: IconType) {
