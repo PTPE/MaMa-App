@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export default function DeleteXIcon() {
+export default function DeleteXButton() {
   return (
     <Container>
       <Line className="top" />

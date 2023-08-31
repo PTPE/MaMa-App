@@ -1,33 +1,19 @@
 import styled from "styled-components";
-type IconType = {
-  styles?: {
-    width?: string;
-    height?: string;
-  };
-};
-export default function ExitIcon(props: IconType) {
-  const mergesStyles = { ...ExitIcon.defaultProps.styles, ...props.styles };
 
+export default function ExitButton() {
   return (
-    <Container styles={mergesStyles}>
+    <Container>
       <Line className="top" />
       <Line className="bottom" />
     </Container>
   );
 }
 
-ExitIcon.defaultProps = {
-  styles: {
-    width: "30px",
-    height: "30px",
-  },
-};
-
-const Container = styled.div<IconType>`
+const Container = styled.div`
   position: relative;
   margin: auto;
-  width: ${(props) => props.styles!.width};
-  height: ${(props) => props.styles!.height};
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;

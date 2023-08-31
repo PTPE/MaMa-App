@@ -1,13 +1,11 @@
-interface SVGProps {
-  width?: number;
-  height?: number;
-}
-export default function DogIcon({ width = 24, height = 24 }: SVGProps) {
+import { IconType } from "../../modules/icons/icones";
+
+export default function DogIcon({ width = "24px", height = "24px" }: IconType) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={`${width}px`}
-      height={`${height}px`}
+      width={width}
+      height={height}
       viewBox="0 0 36 36"
     >
       <path

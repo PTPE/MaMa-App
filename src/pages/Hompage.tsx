@@ -9,7 +9,7 @@ export default function Hompage() {
       <Title>
         <span>MaMa</span> APP
       </Title>
-      <DogIcon width={250} height={250} />
+      <DogIcon width="250px" height="250px" />
       <Link to="app">
         <Button
           styles={{

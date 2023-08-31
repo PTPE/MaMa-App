@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DeleteXIcon from "../icon/DeleteXIcon";
+import DeleteXButton from "../ui/DeleteXButton";
 
 type SelectedItemsType = {
   selectedItems: string[];
@@ -10,7 +10,7 @@ export default function SelectedItems(props: SelectedItemsType) {
       {props.selectedItems.map((item) => (
         <Item key={item}>
           {item}
-          <DeleteXIcon />
+          <DeleteXButton />
         </Item>
       ))}
     </>

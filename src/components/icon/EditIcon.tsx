@@ -1,7 +1,5 @@
-type IconType = {
-  width?: string;
-  height?: string;
-};
+import { IconType } from "../../modules/icons/icones";
+
 export default function EditIcon({
   width = "20px",
   height = "20px",

@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { keyframes, styled } from "styled-components";
-import ExitIcon from "../icon/ExitIcon";
+import ExitButton from "../ui/ExitButton";
 
 export default function ModalContainer({
   children,
@@ -23,7 +23,7 @@ function Modal({ children }: { children: React.ReactNode }) {
   return (
     <Container>
       <div className="exit">
-        <ExitIcon />
+        <ExitButton />
       </div>
       {children}
     </Container>

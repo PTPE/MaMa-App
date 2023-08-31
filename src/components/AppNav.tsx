@@ -29,7 +29,7 @@ export function AppNav() {
     <>
       <Header>
         <Logo>
-          <DogIcon width={60} height={60} />
+          <DogIcon width="60px" height="60px" />
           <h1>
             <span>MaMa</span> APP
           </h1>

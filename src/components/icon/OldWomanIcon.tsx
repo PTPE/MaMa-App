@@ -1,7 +1,4 @@
-type IconType = {
-  width?: string;
-  height?: string;
-};
+import { IconType } from "../../modules/icons/icones";
 
 export default function OldWomanIcon({
   width = "60px",
