@@ -1,53 +1,44 @@
-import { keyframes, styled } from "styled-components";
+import styled from "styled-components";
+import Button from "../Button";
 
 type AddNewItemType = {
-  children: React.ReactNode;
-  onClick: () => void;
   isClicked: boolean;
+  handleClick: () => void;
 };
 
 export default function AddNewItem(props: AddNewItemType) {
   return (
-    <Add onClick={props.onClick} className={props.isClicked ? "active" : ""}>
-      {props.children}
-    </Add>
+    <AddButton
+      className={props.isClicked ? "active" : ""}
+      onClick={props.handleClick}
+    >
+      {props.isClicked ? (
+        <Button
+          styles={{ fontSize: "20px", padding: "4px 8px", fontWeight: "400" }}
+        >
+          新增
+        </Button>
+      ) : (
+        <span>＋</span>
+      )}
+    </AddButton>
   );
 }
 
-const wordColorAnimation = keyframes`
-    0%{
-        color:transparent;
-    }
-    60%{
-        color:transparent;
-    }
-    100%{
-        color:black;
-    }
-`;
-
-const Add = styled.div`
-  font-weight: 400;
-  width: 30px;
-  height: 30px;
-  background: #ffcc29;
+const AddButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #ffcc29;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
-  overflow: hidden;
-
-  &:hover {
-    background: #ffe9a1;
-  }
+  padding: 3px;
+  position: relative;
   &.active {
-    background: transparent;
-    border: 2px solid #ffe9a1;
-    width: 160px;
-    height: 42px;
+    width: 80px;
     border-radius: 10px;
-    animation: ${wordColorAnimation} 300ms;
+    background: transparent;
   }
 `;

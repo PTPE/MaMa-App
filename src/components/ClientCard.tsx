@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import OldManIcon from "./icon/OldManIcon";
 import ModalContainer from "./modal/ModalContainer";
-import ModalContent from "./modal/ModalContent";
+import EditClientDataForm from "./modal/EditClientDataForm";
 
 type DataType = {
   data: {
@@ -61,16 +61,16 @@ export default function ClientCard(props: DataType) {
       <Service>
         <label>服務項目｜</label>
         <ul>
-          {props.data.service.map((service) => (
-            <li>{service}</li>
+          {props.data.service.map((service, i) => (
+            <li key={i}>{service}</li>
           ))}
         </ul>
       </Service>
       <Time>
         <label> 服務時間｜</label>
         <ul>
-          {props.data.time.map((time) => (
-            <li>{formatTime(time)}</li>
+          {props.data.time.map((time, i) => (
+            <li key={i}>{formatTime(time)}</li>
           ))}
         </ul>
       </Time>
@@ -82,7 +82,7 @@ export default function ClientCard(props: DataType) {
         ""
       ) : (
         <ModalContainer>
-          <ModalContent />
+          <EditClientDataForm />
         </ModalContainer>
       )}
     </Card>

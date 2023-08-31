@@ -31,8 +31,8 @@ export default function ClientDataDisplay() {
         </Button>
       </Add>
       <ClientList>
-        {data.map((data) => (
-          <ClientCard data={data} />
+        {data.map((data, i) => (
+          <ClientCard data={data} key={i} />
         ))}
       </ClientList>
     </Container>

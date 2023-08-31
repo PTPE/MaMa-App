@@ -49,11 +49,11 @@ const Line = styled.div`
   }
 
   ${Container}:hover &.top {
-    background: red;
+    background: #002a6a;
     transform: rotate(45deg);
   }
   ${Container}:hover &.bottom {
-    background: red;
+    background: #002a6a;
     transform: rotate(-45deg);
   }
 `;
