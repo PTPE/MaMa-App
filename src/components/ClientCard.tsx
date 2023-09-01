@@ -1,3 +1,4 @@
+import { useState } from "react";
 import EditIcon from "./icon/EditIcon";
 import TrashCanIcon from "./icon/TrashCanIcon";
 import OldWomanIcon from "./icon/OldWomanIcon";
@@ -6,31 +7,24 @@ import Button from "./Button";
 import OldManIcon from "./icon/OldManIcon";
 import ModalContainer from "./modal/ModalContainer";
 import EditClientDataForm from "./modal/EditClientDataForm";
-
-type DataType = {
-  data: {
-    id: number;
-    name: string;
-    gender: string;
-    address: string;
-    service: string[];
-    time: TimeType[];
-  };
-};
-
-type TimeType = {
-  day: string;
-  startHour: string;
-  startMin: string;
-  endHour: string;
-  endMin: string;
-};
+import { DataType } from "../modules/ClientDataType";
+import { TimeType } from "../modules/ClientDataType";
 
 function formatTime(time: TimeType) {
   return `${time.day}${time.startHour}:${time.startMin} - ${time.endHour}:${time.endMin}`;
 }
 
-export default function ClientCard(props: DataType) {
+export default function ClientCard({ data }: { data: DataType }) {
+  const [openEditModal, setOpenEditModal] = useState(false);
+
+  function handleOpenModal() {
+    setOpenEditModal(true);
+  }
+
+  function handleCloseModal() {
+    setOpenEditModal(false);
+  }
+
   return (
     <Card>
       <Icons>
@@ -41,7 +35,7 @@ export default function ClientCard(props: DataType) {
             backgroundColor: "transparent",
           }}
         >
-          <EditIcon />
+          <EditIcon onClick={handleOpenModal} />
         </Button>
         <Button
           styles={{
@@ -54,14 +48,16 @@ export default function ClientCard(props: DataType) {
         </Button>
       </Icons>
       <Identity>
-        {props.data.gender === "男" ? <OldManIcon /> : <OldWomanIcon />}
+        {data.gender === "男" ? <OldManIcon /> : <OldWomanIcon />}
 
-        <h2>{props.data.name}</h2>
+        <h2>
+          <span>{data.name}</span>
+        </h2>
       </Identity>
       <Service>
         <label>服務項目｜</label>
         <ul>
-          {props.data.service.map((service, i) => (
+          {data.service.map((service, i) => (
             <li key={i}>{service}</li>
           ))}
         </ul>
@@ -69,19 +65,17 @@ export default function ClientCard(props: DataType) {
       <Time>
         <label> 服務時間｜</label>
         <ul>
-          {props.data.time.map((time, i) => (
+          {data.time.map((time, i) => (
             <li key={i}>{formatTime(time)}</li>
           ))}
         </ul>
       </Time>
       <Address>
         <label>服務地址｜</label>
-        <span className="item">{props.data.address}</span>
+        <span className="item">{data.address}</span>
       </Address>
-      {props.data.name === "" ? (
-        ""
-      ) : (
-        <ModalContainer>
+      {openEditModal && (
+        <ModalContainer onClick={handleCloseModal}>
           <EditClientDataForm />
         </ModalContainer>
       )}
@@ -110,6 +104,11 @@ const Card = styled.div`
 
 const Identity = styled.div`
   text-align: center;
+  display: inline;
+
+  span {
+    background-image: linear-gradient(rgba(0 0 0 /0) 70%, #53a8c7 70%);
+  }
 `;
 
 const Service = styled.div`

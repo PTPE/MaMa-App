@@ -3,6 +3,7 @@ import { IconType } from "../../modules/icons/icones";
 export default function EditIcon({
   width = "20px",
   height = "20px",
+  onClick,
 }: IconType) {
   return (
     <svg
@@ -10,6 +11,7 @@ export default function EditIcon({
       width={`${width}`}
       height={`${height}`}
       viewBox="0 0 24 24"
+      onClick={onClick}
     >
       <path
         fill="currentColor"

@@ -1,10 +1,6 @@
 import { styled } from "styled-components";
 
-type ClientListType = {
-  children: React.ReactNode;
-};
-
-export default function ClientList(props: ClientListType) {
+export default function ClientList(props: { children: React.ReactNode }) {
   return <List>{props.children}</List>;
 }
 

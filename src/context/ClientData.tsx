@@ -1,19 +1,6 @@
 import { useContext, createContext, useReducer, useCallback } from "react";
 
-type DataType = {
-  id: number;
-  name: string;
-  gender: string;
-  address: string;
-  time: {
-    day: string;
-    startHour: string;
-    startMin: string;
-    endHour: string;
-    endMin: string;
-  }[];
-  service: string[];
-};
+import { DataType } from "../modules/ClientDataType";
 
 type state = {
   data: DataType[];

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function ExitButton() {
+export default function ExitButton({ onClick }: { onClick: () => void }) {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Line className="top" />
       <Line className="bottom" />
     </Container>

@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import DropDownMenu from "../DropDownMenu";
+import { TimeType } from "../../../modules/ClientDataType";
 
 type TimeInputType = {
   handleClick: () => void;
@@ -8,27 +9,20 @@ type TimeInputType = {
   timeList: string[];
 };
 
-type StateType = {
-  day: string;
-  startHour: string;
-  startMin: string;
-  endHour: string;
-  endMin: string;
-};
-
 type ActionType = {
   type: string;
   payload: string;
 };
 
-const initialState: StateType = {
+const initialState: TimeType = {
   day: "一",
   startHour: "08",
   startMin: "00",
   endHour: "08",
   endMin: "00",
 };
-const reducer = (state: StateType, action: ActionType): StateType => {
+
+const reducer = (state: TimeType, action: ActionType): TimeType => {
   switch (action.type) {
     case "day":
       return { ...state, day: action.payload };

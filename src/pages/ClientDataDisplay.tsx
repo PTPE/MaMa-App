@@ -15,6 +15,8 @@ export default function ClientDataDisplay() {
     })();
   }, [fetchClient]);
 
+  console.log(data);
+
   if (isLoading) return <div></div>;
 
   return (

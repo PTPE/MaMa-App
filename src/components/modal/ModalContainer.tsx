@@ -4,14 +4,16 @@ import ExitButton from "../ui/ExitButton";
 
 export default function ModalContainer({
   children,
+  onClick,
 }: {
   children: React.ReactNode;
+  onClick: () => void;
 }) {
   return (
     <>
       {createPortal(
         <BackDropOverlay>
-          <Modal>{children}</Modal>
+          <Modal onClick={onClick}>{children}</Modal>
         </BackDropOverlay>,
         document.querySelector("#modal")!
       )}
@@ -19,11 +21,17 @@ export default function ModalContainer({
   );
 }
 
-function Modal({ children }: { children: React.ReactNode }) {
+function Modal({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+}) {
   return (
     <Container>
       <div className="exit">
-        <ExitButton />
+        <ExitButton onClick={onClick} />
       </div>
       {children}
     </Container>
@@ -50,7 +58,6 @@ const openModal = keyframes`
 
 const Container = styled.div`
   width: 60%;
-  height: 60%;
   background-color: #fff;
   border-radius: 10px;
   z-index: 1000;

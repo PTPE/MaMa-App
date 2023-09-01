@@ -9,6 +9,7 @@ type DropDownServiceMenuType = {
   setSelectedOption: (value: string) => void;
   width?: string;
 };
+
 export default function DropDownMenu(props: DropDownServiceMenuType) {
   const [openList, setOpenList] = useState(true);
 
