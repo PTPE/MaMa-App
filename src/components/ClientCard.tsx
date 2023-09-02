@@ -9,6 +9,7 @@ import ModalContainer from "./modal/ModalContainer";
 import EditClientDataForm from "./modal/EditClientDataForm";
 import { DataType } from "../modules/ClientDataType";
 import { TimeType } from "../modules/ClientDataType";
+import ClientCardInfoField from "./ui/ClientCardInfoField";
 
 function formatTime(time: TimeType) {
   return `${time.day}${time.startHour}:${time.startMin} - ${time.endHour}:${time.endMin}`;
@@ -25,13 +26,14 @@ export default function ClientCard({ data }: { data: DataType }) {
     setOpenEditModal(false);
   }
 
+  const formattedTimeData = data.time.map((time) => formatTime(time));
+
   return (
     <Card>
       <Icons>
         <Button
           styles={{
             padding: "4px 8px",
-            fontSize: "16px",
             backgroundColor: "transparent",
           }}
         >
@@ -40,7 +42,6 @@ export default function ClientCard({ data }: { data: DataType }) {
         <Button
           styles={{
             padding: "5px 8px",
-            fontSize: "16px",
             backgroundColor: "transparent",
           }}
         >
@@ -49,31 +50,14 @@ export default function ClientCard({ data }: { data: DataType }) {
       </Icons>
       <Identity>
         {data.gender === "男" ? <OldManIcon /> : <OldWomanIcon />}
-
         <h2>
           <span>{data.name}</span>
         </h2>
       </Identity>
-      <Service>
-        <label>服務項目｜</label>
-        <ul>
-          {data.service.map((service, i) => (
-            <li key={i}>{service}</li>
-          ))}
-        </ul>
-      </Service>
-      <Time>
-        <label> 服務時間｜</label>
-        <ul>
-          {data.time.map((time, i) => (
-            <li key={i}>{formatTime(time)}</li>
-          ))}
-        </ul>
-      </Time>
-      <Address>
-        <label>服務地址｜</label>
-        <span className="item">{data.address}</span>
-      </Address>
+      <ClientCardInfoField label="服務項目" content={data.service} />
+      <ClientCardInfoField label="服務時間" content={formattedTimeData} />
+      <ClientCardInfoField label="服務地址" content={data.address} />
+
       {openEditModal && (
         <ModalContainer onClick={handleCloseModal}>
           <EditClientDataForm />
@@ -107,36 +91,7 @@ const Identity = styled.div`
   display: inline;
 
   span {
-    background-image: linear-gradient(rgba(0 0 0 /0) 70%, #53a8c7 70%);
-  }
-`;
-
-const Service = styled.div`
-  display: flex;
-  align-items: baseline;
-  label {
-    flex: 0 0 auto;
-    font-weight: 500;
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  li {
-    list-style: none;
-    padding: 2px;
-    border-radius: 10px;
-  }
-`;
-const Time = styled(Service)`
-  ul {
-    flex-direction: column;
-  }
-`;
-const Address = styled(Service)`
-  ul {
-    flex-direction: column;
+    background-image: linear-gradient(rgba(0 0 0 /0) 70%, #53a8c7 30%);
   }
 `;
 const Icons = styled.div`
