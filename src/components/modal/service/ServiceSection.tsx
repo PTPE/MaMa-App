@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import AddNewService from "./AddNewService";
-import SelectedItems from "../SelectedItems";
+import SelectedItems from "../../ui/modal/SelectedItems";
 
 export default function ServiceSection() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import AddNewItem from "../AddNewItem";
+import AddNewItem from "../../ui/modal/AddNewItem";
 import TimeInput from "./TimeInput";
 
 const dayList = ["一", "二", "三", "四", "五", "六", "日"];

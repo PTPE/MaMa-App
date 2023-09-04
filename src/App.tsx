@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Hompage from "./pages/Hompage";
-import { AppNav } from "./components/AppNav";
+import { AppNav } from "./components/ui/share/AppNav";
 import ClientDataDisplay from "./pages/ClientDataDisplay";
 import CreateSchedule from "./pages/CreateSchedule";
 import { ClientDataProvider } from "./context/ClientData";

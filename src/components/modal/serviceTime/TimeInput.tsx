@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import DropDownMenu from "../DropDownMenu";
+import DropDownMenu from "../../ui/modal/DropDownMenu";
 import { TimeType } from "../../../modules/ClientDataType";
 
 type TimeInputType = {

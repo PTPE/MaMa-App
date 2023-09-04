@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SelectedItems from "../SelectedItems";
+import SelectedItems from "../../ui/modal/SelectedItems";
 import AddNewServiceTime from "./AddNewServiceTime";
 export default function ServiceTimeSection() {
   return (

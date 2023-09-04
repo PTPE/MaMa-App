@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { useClientData } from "../context/ClientData";
-import ClientCard from "../components/ClientCard";
-import ClientList from "../components/ClientList";
-import Button from "../components/Button";
+import ClientCard from "../components/ui/clientDataDisplay/ClientCard";
+import ClientList from "../components/ui/clientDataDisplay/ClientList";
+import Button from "../components/ui/share/Button";
 import { useEffect } from "react";
 
 export default function ClientDataDisplay() {

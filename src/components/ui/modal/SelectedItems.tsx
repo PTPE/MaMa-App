@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DeleteXButton from "../ui/DeleteXButton";
+import DeleteXButton from "./DeleteXButton";
 
 type SelectedItemsType = {
   selectedItems: string[];

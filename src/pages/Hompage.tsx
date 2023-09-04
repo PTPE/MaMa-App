@@ -1,6 +1,6 @@
 import DogIcon from "../components/icon/DogIcon";
 import styled from "styled-components";
-import Button from "../components/Button";
+import Button from "../components/ui/share/Button";
 import { Link } from "react-router-dom";
 
 export default function Hompage() {

@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { keyframes, styled } from "styled-components";
-import ExitButton from "../ui/ExitButton";
+import ExitButton from "../ui/modal/ExitButton";
 
 export default function ModalContainer({
   children,

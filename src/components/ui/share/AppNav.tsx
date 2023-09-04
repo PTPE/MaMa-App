@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { styled } from "styled-components";
-import DogIcon from "./icon/DogIcon";
+import DogIcon from "../../icon/DogIcon";
 import Button from "./Button";
 
 const navLinks = [{ 案主資料: "clientData" }, { 製作班表: "create" }];

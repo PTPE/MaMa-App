@@ -1,15 +1,15 @@
 import { useState } from "react";
-import EditIcon from "./icon/EditIcon";
-import TrashCanIcon from "./icon/TrashCanIcon";
-import OldWomanIcon from "./icon/OldWomanIcon";
+import EditIcon from "../../icon/EditIcon";
+import TrashCanIcon from "../../icon/TrashCanIcon";
+import OldWomanIcon from "../../icon/OldWomanIcon";
 import styled from "styled-components";
-import Button from "./Button";
-import OldManIcon from "./icon/OldManIcon";
-import ModalContainer from "./modal/ModalContainer";
-import EditClientDataForm from "./modal/EditClientDataForm";
-import { DataType } from "../modules/ClientDataType";
-import { TimeType } from "../modules/ClientDataType";
-import ClientCardInfoField from "./ui/ClientCardInfoField";
+import Button from "../share/Button";
+import OldManIcon from "../../icon/OldManIcon";
+import ModalContainer from "../../modal/ModalContainer";
+import EditClientDataForm from "../../modal/EditClientDataForm";
+import { DataType } from "../../../modules/ClientDataType";
+import { TimeType } from "../../../modules/ClientDataType";
+import ClientCardInfoField from "./ClientCardInfoField";
 
 function formatTime(time: TimeType) {
   return `${time.day}${time.startHour}:${time.startMin} - ${time.endHour}:${time.endMin}`;
