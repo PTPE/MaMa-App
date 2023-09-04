@@ -1,37 +1,9 @@
-import styled from "styled-components";
-import SelectedItems from "../../ui/modal/SelectedItems";
 import AddNewServiceTime from "./AddNewServiceTime";
+import SelectSection from "../../ui/modal/SelectSection";
 export default function ServiceTimeSection() {
   return (
-    <Container>
-      <Label>服務時間</Label>
-      <SelectedList>
-        <SelectedItems
-          selectedItems={[
-            "星期一 14:00 - 16:00",
-            "星期二 14:00 - 16:00",
-            "星期三 14:00 - 16:00",
-          ]}
-        />
-        <AddNewServiceTime />
-      </SelectedList>
-    </Container>
+    <SelectSection label="服務時間" selectedItems={["星期一 10:00 - 15:00"]}>
+      <AddNewServiceTime />
+    </SelectSection>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Label = styled.label`
-  font-weight: 500;
-  flex: 0 0 auto;
-  align-self: start;
-  margin-top: 3px;
-  margin-right: 20px;
-`;
-const SelectedList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
